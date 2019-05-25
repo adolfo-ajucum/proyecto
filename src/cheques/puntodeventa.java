@@ -135,7 +135,7 @@ public class puntodeventa implements Initializable {
     public void setIdProducto(String idProducto) {
         this.idProducto = idProducto;
     }
-    
+     String sql;
 
     /**
      * Initializes the controller class.
@@ -229,7 +229,28 @@ public class puntodeventa implements Initializable {
             double quantity = Double.parseDouble(quantityField.getText());
             double total = unitPrice * quantity;
             System.out.println("en addaction: "+quantity+"Estado"+"Usuario"+cheque.getIdchequera());
-          
+            
+            
+          //--------------
+          sql=" insert into cheques(importe ,estado,usuarios_username,chequeras_idchequeras) values(? ,?,?,?);";
+        
+        try {
+            preparar = con.prepareStatement(sql);
+            preparar.setDouble(1,quantity);
+            preparar.setString(2,"negado");
+            preparar.setString(3,"user");
+            preparar.setInt(4,cheque.getIdchequera());
+           
+            preparar.executeUpdate();
+            
+            JOptionPane.showMessageDialog(null,"Registro Guardado Exitosamiente ");
+            
+
+        } catch (SQLException ex) {
+           
+            JOptionPane.showMessageDialog(null,"Error al guardar el registro "+ex);
+        }  
+          //-------------------
            
             
 
