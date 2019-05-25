@@ -9,6 +9,8 @@ import com.jfoenix.controls.JFXButton;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -16,192 +18,93 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 /**
  * FXML Controller class
  *
- * @author DAVID
+ * @author LENOVO
  */
 public class DashboardController implements Initializable {
+
+    @FXML
+    private JFXButton btnUsuarios;
+    @FXML
+    private JFXButton btnCTAS;
+    @FXML
+    private JFXButton btnCheques;
+    @FXML
+    private JFXButton btnLiberacion;
+    @FXML
+    private JFXButton btnSeguridad;
+    @FXML
+    private JFXButton btnImprimir;
+    @FXML
+    private JFXButton btnReportes;
+    @FXML
+    private JFXButton btnSalir;
+    @FXML
+    private Pane pane;
+    //Variables para Cambio de escenas
+    Node node;
+    Stage stage;
+    Parent parent;
+    Scene root;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-    }   
-    AnchorPane homePane;
-    
-    @FXML
-    private Pane pane;
-    
-    @FXML
-    private JFXButton btnClientes;
-
-    @FXML
-    private JFXButton btnEmpleados;
-
-    @FXML
-    private JFXButton btnProveedores;
-
-    @FXML
-    private JFXButton btnProductos;
-
-    @FXML
-    private JFXButton btnVentas;
-
-    @FXML
-    private JFXButton btnModoPago;
-    
-    @FXML
-    private JFXButton btnReportes;
-
-    @FXML
-    private JFXButton btnSalir;
-    
-    //Variables para Cambio de escenas
-    Node node;
-    Stage stage;
-    Parent parent;
-    Scene root;
-//    public void setNode(Node node){
-//        pane.getChildren().clear();
-//        pane.getChildren().add((Node)node);
-//    }
-//    
-//    public void createPage(AnchorPane home, String loc) throws Exception{
-//        home=FXMLLoader.load(getClass().getResource(loc));
-//        setNode(home);
-//    }
-    
-    
-    @FXML
-    void btnClientes(ActionEvent event) throws IOException{
-        node=(Node) event.getSource();
-        stage=(Stage) node.getScene().getWindow();
-        
-        parent=FXMLLoader.load(getClass().getResource("/Clientes/RegistroClientes.fxml"));
-        
-        Scene scene = new Scene(parent);
-        stage.setScene(scene);
-        stage.centerOnScreen();
-        stage.setTitle("Registro Clientes");
-        stage.show();
+        // TODO
     }
 
     @FXML
-    void btnEmpleados(ActionEvent event) throws IOException{
-        node=(Node) event.getSource();
-        stage=(Stage) node.getScene().getWindow();
-        
-        parent=FXMLLoader.load(getClass().getResource("/Empleados/RegistroEmpleados.fxml"));
-        
-        Scene scene = new Scene(parent);
-        stage.setScene(scene);
-        stage.centerOnScreen();
-        stage.setTitle("Registro Empleados");
-        stage.show();
+    private void btnUsuarios(ActionEvent event) {
+
     }
 
     @FXML
-    void btnProductos(ActionEvent event) throws IOException{
-        node=(Node) event.getSource();
-        stage=(Stage) node.getScene().getWindow();
-        
-        parent=FXMLLoader.load(getClass().getResource("/Productos/RegistroProductos.fxml"));
-        
-        Scene scene = new Scene(parent);
-        stage.setScene(scene);
-        stage.centerOnScreen();
-        stage.setTitle("Registro Productos");
-        stage.show();
+    private void btnCTAS(ActionEvent event) {
     }
 
     @FXML
-    void btnProveedores(ActionEvent event) throws IOException{
-        node=(Node) event.getSource();
-        stage=(Stage) node.getScene().getWindow();
-        
-        parent=FXMLLoader.load(getClass().getResource("/Proveedores/RegistroProveedores.fxml"));
-        
-        Scene scene = new Scene(parent);
-        stage.setScene(scene);
-        stage.centerOnScreen();
-        stage.setTitle("Registro Proveedores");
-        stage.show();
-    }
-    
-    @FXML
-    void btnModoPago(ActionEvent event) throws IOException{
-        node=(Node) event.getSource();
-        stage=(Stage) node.getScene().getWindow();
-        
-        parent=FXMLLoader.load(getClass().getResource("/ModoPago/RegistroModoPago.fxml"));
-        
-        Scene scene = new Scene(parent);
-        stage.setScene(scene);
-        stage.centerOnScreen();
-        stage.setTitle("Registro Modo Pago");
-        stage.show();
-    }
+    private void btnCheques(ActionEvent event) {
+        node = (Node) event.getSource();
+        stage = (Stage) node.getScene().getWindow();
 
-    @FXML
-    void btnReportes(ActionEvent event) throws IOException{
-        node=(Node) event.getSource();
-        stage=(Stage) node.getScene().getWindow();
-        
-        parent=FXMLLoader.load(getClass().getResource("/Reportes/Reportes.fxml"));
-        
-        Scene scene = new Scene(parent);
-        stage.setScene(scene);
-        stage.centerOnScreen();
-        stage.setTitle("Reportes");
-        stage.show();
-    }
-    
-    @FXML
-    void btnVentas(ActionEvent event) throws IOException {
-     node=(Node) event.getSource();
-        stage=(Stage) node.getScene().getWindow();
-        
-        parent=FXMLLoader.load(getClass().getResource("/Facturacion/puntodeventa.fxml"));
-        
+        try {
+            parent = FXMLLoader.load(getClass().getResource("/cheques/puntodeventa.fxml"));
+        } catch (IOException ex) {
+            System.out.println("Error"+ex);
+        }
+
         Scene scene = new Scene(parent);
         stage.setScene(scene);
         stage.centerOnScreen();
         stage.setTitle("Ventas");
-        stage.show();    
-    }
-    
-    @FXML
-    void btnMarca(ActionEvent event) throws IOException {
-     node=(Node) event.getSource();
-        stage=(Stage) node.getScene().getWindow();
-        
-        parent=FXMLLoader.load(getClass().getResource("/Marca/RegistroMarca.fxml"));
-        
-        Scene scene = new Scene(parent);
-        stage.setScene(scene);
-        stage.centerOnScreen();
-        stage.setTitle("Ventas");
-        stage.show();    
-    }
-
-    @FXML
-    void btnSalir(ActionEvent event) throws IOException {
-        node=(Node) event.getSource();
-        stage=(Stage) node.getScene().getWindow();
-        
-        parent=FXMLLoader.load(getClass().getResource("/Login/F_Login.fxml"));
-        
-        Scene scene = new Scene(parent);
-        stage.setScene(scene);
-        stage.centerOnScreen();
-
-        stage.setTitle("Login");
         stage.show();
     }
+
+    @FXML
+    private void btnLiberacion(ActionEvent event) {
+    }
+
+    @FXML
+    private void btnSeguridad(ActionEvent event) {
+    }
+
+    @FXML
+    private void btnImprimir(ActionEvent event) {
+    }
+
+    @FXML
+    private void btnReportes(ActionEvent event) {
+    }
+
+    @FXML
+    private void btnSalir(ActionEvent event) {
+    }
+
 }

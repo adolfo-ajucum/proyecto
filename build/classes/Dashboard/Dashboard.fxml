@@ -12,16 +12,16 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" nodeOrientation="LEFT_TO_RIGHT" prefHeight="658.0" prefWidth="1060.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Dashboard.DashboardController">
+<AnchorPane id="AnchorPane" nodeOrientation="LEFT_TO_RIGHT" prefHeight="658.0" prefWidth="1060.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Dashboard.DashboardController">
    <children>
       <Pane layoutX="-2.0" prefHeight="145.0" prefWidth="1271.0" styleClass="head-background" stylesheets="@style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Label layoutX="224.0" layoutY="47.0" text="HardSoftware" textFill="WHITE">
+            <Label layoutX="224.0" layoutY="47.0" text="Nueva Verapaz" textFill="WHITE">
                <font>
                   <Font size="36.0" />
                </font>
             </Label>
-            <Label layoutX="227.0" layoutY="100.0" text="Desde 2015" textFill="WHITE">
+            <Label layoutX="227.0" layoutY="100.0" text="Sistema de Gestion de cheques" textFill="WHITE">
                <font>
                   <Font size="13.0" />
                </font>
@@ -41,7 +41,7 @@
                   <Insets top="60.0" />
                </VBox.margin>
             </Label>
-            <JFXButton fx:id="btnClientes" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#btnClientes" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Clientes" textFill="#5b5858">
+            <JFXButton fx:id="btnUsuarios" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#btnUsuarios" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Usuarios" textFill="#5b5858">
                <VBox.margin>
                   <Insets />
                </VBox.margin>
@@ -51,7 +51,7 @@
                <graphic>
                   <ImageView accessibleText="Project List" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../Imagenes/if_clients_43573.png" />
+                        <Image url="@../Imagenes/usuarios.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -59,7 +59,7 @@
                   <Insets left="50.0" />
                </padding>
             </JFXButton>
-            <JFXButton fx:id="btnEmpleados" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#btnEmpleados" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Empleados" textFill="#5b5858">
+            <JFXButton fx:id="btnCTAS" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#btnCTAS" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Creación de CTAS" textFill="#5b5858">
                <VBox.margin>
                   <Insets />
                </VBox.margin>
@@ -69,7 +69,7 @@
                <graphic>
                   <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../Imagenes/if_Profile_10593.png" />
+                        <Image url="@../Imagenes/ccuentas.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -77,14 +77,14 @@
                   <Insets left="50.0" />
                </padding>
             </JFXButton>
-            <JFXButton fx:id="btnProveedores" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#btnProveedores" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Proveedores" textFill="#5b5858">
+            <JFXButton fx:id="btnCheques" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#btnCheques" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Generación de cheques" textFill="#5b5858">
                <font>
                   <Font size="13.0" />
                </font>
                <graphic>
                   <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../Imagenes/if_provider_45019.png" />
+                        <Image url="@../Imagenes/cheques.png" />
                      </image>
                      <viewport>
                         <Rectangle2D />
@@ -95,14 +95,14 @@
                   <Insets left="50.0" />
                </padding>
             </JFXButton>
-            <JFXButton fx:id="btnMarca" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#btnMarca" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Marca" textFill="#5b5858">
+            <JFXButton fx:id="btnLiberacion" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#btnLiberacion" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Liberación" textFill="#5b5858">
                <font>
                   <Font size="13.0" />
                </font>
                <graphic>
                   <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../Imagenes/if_logo_brand_brands_logos_android_1916089.png" />
+                        <Image url="@../Imagenes/liberacion.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -110,14 +110,14 @@
                   <Insets left="50.0" />
                </padding>
             </JFXButton>
-            <JFXButton fx:id="btnProductos" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#btnProductos" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Productos" textFill="#5b5858">
+            <JFXButton fx:id="btnSeguridad" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#btnSeguridad" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Niveles de seguridad" textFill="#5b5858">
                <font>
                   <Font size="13.0" />
                </font>
                <graphic>
                   <ImageView accessibleText="Project List" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../Imagenes/if_palet02_62584.png" />
+                        <Image url="@../Imagenes/Seguridad.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -125,29 +125,14 @@
                   <Insets left="50.0" />
                </padding>
             </JFXButton>
-            <JFXButton fx:id="btnVentas" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#btnVentas" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Ventas" textFill="#5b5858">
+            <JFXButton fx:id="btnImprimir" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#btnImprimir" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Impresión de cheques" textFill="#5b5858">
                <font>
                   <Font size="13.0" />
                </font>
                <graphic>
                   <ImageView accessibleText="Project List" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../Imagenes/if_08_Sales_1871425.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-               <padding>
-                  <Insets left="50.0" />
-               </padding>
-            </JFXButton>
-            <JFXButton fx:id="btnModoPago" alignment="BASELINE_LEFT" graphicTextGap="10.0" onAction="#btnModoPago" prefHeight="43.0" prefWidth="252.0" ripplerFill="#bfadf8" text="Modo Pago" textFill="#5b5858">
-               <font>
-                  <Font size="13.0" />
-               </font>
-               <graphic>
-                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../Imagenes/if_Purse_669953.png" />
+                        <Image url="@../Imagenes/Impresion.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -162,7 +147,7 @@
                <graphic>
                   <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../Imagenes/if_custom-reports_63120.png" />
+                        <Image url="@../Imagenes/reportes.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -204,7 +189,7 @@
       </Pane>
       <Pane fx:id="pane" layoutX="213.0" layoutY="175.0" prefHeight="422.0" prefWidth="803.0">
          <children>
-            <ImageView fitHeight="395.0" fitWidth="408.0" layoutX="204.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="410.0" fitWidth="585.0" layoutX="135.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../Imagenes/hs.jpg" />
                </image>
