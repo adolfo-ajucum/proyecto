@@ -72,7 +72,7 @@
                   <Insets />
                </HBox.margin>
                <children>
-                  <TableView fx:id="listTableView" minHeight="-Infinity" minWidth="-Infinity" prefHeight="55.0" prefWidth="845.0" styleClass="table">
+                  <TableView fx:id="listTableView" disable="true" minHeight="-Infinity" minWidth="-Infinity" prefHeight="55.0" prefWidth="164.0" styleClass="table">
                     <columns>
                       <TableColumn fx:id="itemColumn" prefWidth="125.0" text="Importe" visible="false" />
                         <TableColumn fx:id="priceColumn" prefWidth="75.0" text="Estado" visible="false" />
@@ -106,16 +106,16 @@
                                 </rowConstraints>
                                  <children>
                                     <TextField fx:id="productField" editable="false" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" GridPane.columnIndex="1" GridPane.valignment="CENTER" />
-                                    <TextField fx:id="priceField" editable="false" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-                                    <Label text="Producto" GridPane.halignment="RIGHT">
+                                    <TextField fx:id="priceField" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                                    <Label text="DetalleCTA" GridPane.halignment="RIGHT">
                                        <GridPane.margin>
                                           <Insets right="5.0" />
                                        </GridPane.margin></Label>
-                                    <Label text="Precio C/u" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                                    <Label text="Proveedor" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
                                        <GridPane.margin>
                                           <Insets right="5.0" />
                                        </GridPane.margin></Label>
-                                    <Label text="Cantidad" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+                                    <Label text="Importe" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
                                        <GridPane.margin>
                                           <Insets right="5.0" />
                                        </GridPane.margin></Label>
@@ -127,7 +127,7 @@
                                     <HBox alignment="CENTER_LEFT" minWidth="-Infinity" prefHeight="35.0" prefWidth="180.0" GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.valignment="CENTER">
                                        <children>
                                           <TextField fx:id="quantityField" disable="true" minHeight="-Infinity" minWidth="-Infinity" prefHeight="39.0" prefWidth="383.0" HBox.hgrow="ALWAYS" />
-                                          <Label fx:id="quantityLabel" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="127.0" text="Stock:" HBox.hgrow="ALWAYS">
+                                          <Label fx:id="quantityLabel" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="127.0" text="Saldo" HBox.hgrow="ALWAYS">
                                              <HBox.margin>
                                                 <Insets left="5.0" />
                                              </HBox.margin>
@@ -143,59 +143,10 @@
                                  <children>
                                     <Button fx:id="addButton" alignment="CENTER" minWidth="-Infinity" mnemonicParsing="false" onAction="#addAction" prefHeight="31.0" prefWidth="80.0" text="+" HBox.hgrow="ALWAYS" />
                                     <Button fx:id="removeButton" alignment="CENTER" minWidth="-Infinity" mnemonicParsing="false" onAction="#removeAction" prefHeight="31.0" prefWidth="80.0" text="-" HBox.hgrow="ALWAYS" />
-                                    <Button fx:id="resetButton" alignment="CENTER" minWidth="-Infinity" mnemonicParsing="false" onAction="#resetAction" prefHeight="31.0" prefWidth="98.0" text="De nuevo" HBox.hgrow="ALWAYS" />
+                                    <Button fx:id="resetButton" alignment="CENTER" minWidth="-Infinity" mnemonicParsing="false" onAction="#resetAction" prefHeight="31.0" prefWidth="98.0" text="Cancelar" HBox.hgrow="ALWAYS" />
                                  </children>
                               </HBox>
                            </children>
-                        </VBox>
-                        <VBox maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="217.0" prefWidth="240.0" styleClass="right-product-vbox" HBox.hgrow="NEVER">
-                           <children>
-                              <GridPane alignment="TOP_CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="75.0" prefWidth="195.0" styleClass="right-grid" VBox.vgrow="ALWAYS">
-                                <columnConstraints>
-                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="111.0" minWidth="100.0" prefWidth="111.0" />
-                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="135.0" minWidth="124.0" prefWidth="124.0" />
-                                </columnConstraints>
-                                <rowConstraints>
-                                  <RowConstraints prefHeight="30.0" vgrow="SOMETIMES" />
-                                  <RowConstraints prefHeight="30.0" vgrow="SOMETIMES" />
-                                  <RowConstraints prefHeight="30.0" vgrow="SOMETIMES" />
-                                    <RowConstraints prefHeight="30.0" vgrow="SOMETIMES" />
-                                </rowConstraints>
-                                 <children>
-                                    <Label minHeight="-Infinity" prefHeight="25.0" text="Sub Total" GridPane.halignment="RIGHT">
-                                       <GridPane.margin>
-                                          <Insets right="5.0" />
-                                       </GridPane.margin></Label>
-                                    <Label minHeight="-Infinity" prefHeight="25.0" text="(+)IVA" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
-                                       <GridPane.margin>
-                                          <Insets right="5.0" />
-                                       </GridPane.margin></Label>
-                                    <Label minHeight="-Infinity" prefHeight="25.0" text="(-)Descuento" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
-                                       <GridPane.margin>
-                                          <Insets right="5.0" />
-                                       </GridPane.margin></Label>
-                                    <Label minHeight="-Infinity" prefHeight="25.0" text="A pagar" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
-                                       <GridPane.margin>
-                                          <Insets right="5.0" />
-                                       </GridPane.margin></Label>
-                                    <TextField fx:id="subTotalField" alignment="CENTER_RIGHT" editable="false" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="120.0" text="0.00" GridPane.columnIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
-                                    <TextField fx:id="vatField" alignment="CENTER_RIGHT" editable="false" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="120.0" text="0.00" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
-                                    <TextField fx:id="discountField" alignment="CENTER_RIGHT" editable="false" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="120.0" text="5.00" GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
-                                    <TextField fx:id="netPayableField" alignment="CENTER_RIGHT" editable="false" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="120.0" text="0.00" GridPane.columnIndex="1" GridPane.rowIndex="3" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
-                                 </children>
-                                 <VBox.margin>
-                                    <Insets bottom="5.0" />
-                                 </VBox.margin>
-                              </GridPane>
-                              <HBox alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="31.0" prefWidth="195.0" styleClass="right-hbox-buttons">
-                                 <children>
-                                    <Button fx:id="paymentButton" alignment="CENTER" disable="true" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#paymentAction" prefHeight="31.0" prefWidth="150.0" text="Pagar" HBox.hgrow="ALWAYS" />
-                                 </children>
-                              </HBox>
-                           </children>
-                           <padding>
-                              <Insets left="5.0" />
-                           </padding>
                         </VBox>
                      </children>
                   </HBox>

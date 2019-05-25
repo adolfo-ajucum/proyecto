@@ -12,7 +12,6 @@ import Reportes.ClaseChequera;
 import Reportes.ClaseCheques;
 import static cheques.ProductoInterfaz.PRODUCTLIST;
 //import Productos.ConsultaProductosController;
-import Reportes.ClaseProducto;
 import com.gluonhq.charm.glisten.control.NavigationDrawer.Item;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
@@ -322,7 +321,7 @@ public class puntodeventa implements Initializable {
         System.out.println("Id Chequera en Mod3:" + this.getIdProducto());
         quantityField.setDisable(false);
         productField.setText(product.getDecripcion());
-        priceField.setText(String.valueOf(product.getSaldo()));
+        priceField.setText(/*String.valueOf(product.getSaldo())*/"");
         
         double quantity =  product.getSaldo();
         
@@ -333,7 +332,7 @@ public class puntodeventa implements Initializable {
         quantityField.setEditable(false);
         quantityField.setStyle("-fx-background-color: red;");
         }
-        quantityLabel.setText("Stock: " + String.valueOf(quantity));
+        quantityLabel.setText("Saldo: " + String.valueOf(quantity));
         descriptionArea.setText(product.getNombrecuenta() + " " + product.getNombrebanco());
         } else {
         productField.setText("");
@@ -403,7 +402,7 @@ public class puntodeventa implements Initializable {
         priceField.setText("");
         quantityField.setText("");
         resetQuantityField();
-        quantityLabel.setText("Stock: ");
+        quantityLabel.setText("Saldo: ");
         descriptionArea.setText("");
     }
 
@@ -423,12 +422,12 @@ public class puntodeventa implements Initializable {
 
     private void resetInterface() {
 //        Informacion();
-        resetPaymentButton();
+        //resetPaymentButton();
         resetProductTableSelection();
         resetItemTable();
         resetQuantityField();
         resetAdd();
-        resetInvoice();
+        //resetInvoice();
     }
 
 }

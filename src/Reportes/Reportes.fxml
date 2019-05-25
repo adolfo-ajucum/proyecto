@@ -22,25 +22,12 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <JFXButton fx:id="btnClientes" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="53.0" layoutY="317.0" onAction="#btnClientes" text="CLIENTES">
-         <graphic>
-            <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Imagenes/if_clients_43573.png" />
-               </image>
-            </ImageView>
-         </graphic>
-      </JFXButton>
-      <Label layoutX="91.0" layoutY="416.0" text="Clientes">
-         <font>
-            <Font name="System Bold" size="13.0" />
-         </font>
-      </Label>
+      <JFXButton fx:id="btnClientes" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="53.0" layoutY="317.0" onAction="#btnClientes" text="CLIENTES" />
       <JFXButton fx:id="btnProductos" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="53.0" layoutY="185.0" onAction="#btnProductos" text="PRODUCTOS">
          <graphic>
             <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../Imagenes/if_palet02_62584.png" />
+                  <Image url="@../Imagenes/ccuentas.png" />
                </image>
             </ImageView>
          </graphic>
@@ -54,7 +41,7 @@
          <graphic>
             <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../Imagenes/if_provider_45019.png" />
+                  <Image url="@../Imagenes/cheques.png" />
                </image>
             </ImageView>
          </graphic>
@@ -68,7 +55,7 @@
          <graphic>
             <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../Imagenes/if_Administrator%202_22176.png" />
+                  <Image url="@../Imagenes/usuarios.png" />
                </image>
             </ImageView>
          </graphic>
@@ -78,19 +65,6 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <JFXButton fx:id="btnModoPago" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="211.0" layoutY="185.0" onAction="#btnModoPago" text="MODOPAGO">
-         <graphic>
-            <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Imagenes/if_Purse_669953.png" />
-               </image>
-            </ImageView>
-         </graphic>
-      </JFXButton>
-      <Label layoutX="233.0" layoutY="308.0" text="Modo Pago">
-         <font>
-            <Font name="System Bold" size="13.0" />
-         </font>
-      </Label>
+      <JFXButton fx:id="btnModoPago" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="211.0" layoutY="185.0" onAction="#btnModoPago" text="MODOPAGO" />
    </children>
 </AnchorPane>

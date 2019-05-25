@@ -20,7 +20,7 @@ import javafx.stage.Stage;
 
 /**
  *
- * @author DAVID
+ * @author LENOVO
  */
 public class ConexionBD extends Application {
     

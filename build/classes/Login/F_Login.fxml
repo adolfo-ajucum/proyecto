@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="380.0" prefWidth="655.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Login.LoginController">
+<AnchorPane id="AnchorPane" prefHeight="380.0" prefWidth="655.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Login.LoginController">
    <children>
       <AnchorPane prefHeight="382.0" prefWidth="366.0" style="-fx-background-color: #1A33D5;">
          <children>
@@ -20,15 +20,6 @@
                </font>
             </Label>
             <FontAwesomeIconView fill="WHITE" glyphName="LOCK" layoutX="119.0" layoutY="295.0" size="200" />
-            <JFXButton fx:id="usuario" contentDisplay="GRAPHIC_ONLY" layoutX="276.0" layoutY="315.0" onAction="#btnUsuario">
-               <graphic>
-                  <ImageView fitHeight="44.0" fitWidth="63.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../Imagenes/if_contact-new_23203.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </JFXButton>
          </children>
       </AnchorPane>
       <AnchorPane layoutX="367.0" prefHeight="382.0" prefWidth="288.0" style="-fx-background-color: fff;">
