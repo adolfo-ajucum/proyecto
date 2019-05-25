@@ -41,10 +41,10 @@ public class ReporteProveedoresController implements Initializable {
 
         
         //Enlazar columnas con atributos
-        idproveedor.setCellValueFactory(new PropertyValueFactory<ClaseProveedor,Number>("idProveedor"));
-        nombre.setCellValueFactory(new PropertyValueFactory<ClaseProveedor,String>("nombre"));
-        direccion.setCellValueFactory(new PropertyValueFactory<ClaseProveedor,String>("direccion"));
-        telefono.setCellValueFactory(new PropertyValueFactory<ClaseProveedor,Number>("telefono"));
+        idproveedor.setCellValueFactory(new PropertyValueFactory<MCheques,Number>("IdCheque"));
+        nombre.setCellValueFactory(new PropertyValueFactory<MCheques,String>("nombre"));
+        direccion.setCellValueFactory(new PropertyValueFactory<MCheques,String>("direccion"));
+        telefono.setCellValueFactory(new PropertyValueFactory<MCheques,Number>("telefono"));
         
         //LLenar Informacion
         Informacion();
@@ -54,26 +54,26 @@ public class ReporteProveedoresController implements Initializable {
     
     //Tabla
     @FXML
-    private TableView<ClaseProveedor> Tabla;
+    private TableView<MCheques> Tabla;
     
     //Columnas
     @FXML
-    private TableColumn<ClaseProveedor, Number> idproveedor;
+    private TableColumn<MCheques, Number> idproveedor;
 
     @FXML
-    private TableColumn<ClaseProveedor, String> nombre;
+    private TableColumn<MCheques, String> nombre;
 
     @FXML
-    private TableColumn<ClaseProveedor, String> direccion;
+    private TableColumn<MCheques, String> direccion;
 
     @FXML
-    private TableColumn<ClaseProveedor, Number> telefono;
+    private TableColumn<MCheques, Number> telefono;
 
     @FXML
     private Button btnVolver;
 
     
-    private ObservableList<ClaseProveedor> listaProveedores;
+    private ObservableList<MCheques> listaProveedores;
     
      //Instancia Conexión BD
     ConexionBD conectar = new ConexionBD();
@@ -85,14 +85,15 @@ public class ReporteProveedoresController implements Initializable {
         listaProveedores=FXCollections.observableArrayList();
         
         try {
-            String query="SELECT * FROM proveedor";
+            String query="SELECT * FROM cheques";
             result=con.createStatement().executeQuery(query);
             while(result.next()){
-                ClaseProveedor proveedor = new ClaseProveedor();
-                proveedor.idProveedor.set(result.getInt("id_proveedor"));
-                proveedor.nombre.set(result.getString("nombre"));
-                proveedor.direccion.set(result.getString("direccion"));
-                proveedor.telefono.set(result.getInt("telefono"));
+                MCheques proveedor = new MCheques();
+                proveedor.idcheque.set(result.getInt(1));
+                proveedor.importe.set(result.getDouble(2));
+                proveedor.estado.set(result.getString(3));
+                proveedor.usuario.set(result.getString(4));
+                proveedor.idchquera.set(result.getInt(5));
                 listaProveedores.add(proveedor);
         }
             Tabla.setItems(listaProveedores);
