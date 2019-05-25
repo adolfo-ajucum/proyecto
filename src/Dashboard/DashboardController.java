@@ -104,7 +104,18 @@ public class DashboardController implements Initializable {
     }
 
     @FXML
-    private void btnSalir(ActionEvent event) {
+    private void btnSalir(ActionEvent event) throws IOException {
+        node=(Node) event.getSource();
+        stage=(Stage) node.getScene().getWindow();
+        
+        parent=FXMLLoader.load(getClass().getResource("/Login/F_Login.fxml"));
+        
+        Scene scene = new Scene(parent);
+        stage.setScene(scene);
+        stage.centerOnScreen();
+
+        stage.setTitle("Login");
+        stage.show();
     }
 
 }

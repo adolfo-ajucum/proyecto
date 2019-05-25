@@ -88,17 +88,18 @@ public class LoginController implements Initializable {
     private void btnLoggin(ActionEvent event) throws IOException {
         String capturadol = "";
         String capturado2 = "";
-        String sql = "SELECT * FROM usuario WHERE usuario='" + txtusuario.getText() + "' && contraseña='" + txtpass.getText() + "'";
+        String sql = "SELECT * FROM usuarios WHERE username='" + txtusuario.getText() + "' && userpass='" + txtpass.getText() + "'";
+        //SELECT username, userpass, enabled FROM usuarios WHERE username = ?
         try {
 
             Statement st = con.createStatement();
             ResultSet rs = st.executeQuery(sql);
             while (rs.next()) {
-                capturadol = rs.getString("tipo_usuario");
-                capturado2 = rs.getString("estado");
+                
+                capturado2 = rs.getString("enabled");
             }
-            if (capturadol.equals("vendedor")) {
-                if (capturado2.equals("activo")) {
+           // if (capturadol.equals("vendedor")) {
+                if (capturado2.equals("1")) {
                     node = (Node) event.getSource();
                     stage = (Stage) node.getScene().getWindow();
                     parent = FXMLLoader.load(getClass().getResource("/Dashboard/Dashboard.fxml"));
@@ -107,12 +108,12 @@ public class LoginController implements Initializable {
                     stage.centerOnScreen();
                     stage.setTitle("Dashboard");
                     stage.show();
-                }else{
-                JOptionPane.showMessageDialog(null, "USUARIO SIN PRIVILEGIOS DE ACCESO", "Error", JOptionPane.WARNING_MESSAGE);
+                } else {
+                    JOptionPane.showMessageDialog(null, "USUARIO SIN PRIVILEGIOS DE ACCESO", "Error", JOptionPane.WARNING_MESSAGE);
                 }
-            } else {
-                JOptionPane.showMessageDialog(null, "USUARIO NO REGISTRADO", "Error", JOptionPane.WARNING_MESSAGE);
-            }
+            //} else {
+               // JOptionPane.showMessageDialog(null, "USUARIO NO REGISTRADO", "Error", JOptionPane.WARNING_MESSAGE);
+            //}
 
         } catch (SQLException ex) {
             //Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
