@@ -161,3 +161,10 @@ before delete on cheques
 
 //
 
+insert into usuarios values ('user1', '123', 1);
+insert into autoridad values ('user1', 'ADMIN');
+
+insert into usuarios values ('user2', '456', 1);
+insert into autoridad values ('user2', 'USER');
+insert into autoridad values ('user2', 'STANDAR');
+

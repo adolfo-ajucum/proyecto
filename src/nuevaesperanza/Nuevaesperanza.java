@@ -5,6 +5,7 @@
  */
 package nuevaesperanza;
 
+import com.sun.org.apache.xerces.internal.parsers.SecurityConfiguration;
 import java.io.IOException;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -21,11 +22,12 @@ import javafx.stage.StageStyle;
  *
  * @author LENOVO
  */
+
 public class Nuevaesperanza extends Application {
     
     @Override
     public void start(Stage stage) throws IOException {
-       Parent root = FXMLLoader.load(getClass().getResource("/Dashboard/Dashboard.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/Login/F_Login.fxml"));
         
         stage.initStyle(StageStyle.TRANSPARENT);
         Scene scene = new Scene(root);
